@@ -1,0 +1,83 @@
+/* Dark Mode Styles */
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+  }
+}
+
+/* Filter Button Styles */
+.filter-btn {
+  @apply bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 cursor-pointer;
+}
+
+.filter-btn.active {
+  @apply bg-blue-500 text-white dark:bg-blue-600;
+}
+
+/* Todo Item Styles */
+.todo-item {
+  @apply bg-white dark:bg-gray-800 rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow flex items-start gap-3;
+}
+
+.todo-item.completed .todo-text {
+  @apply line-through text-gray-400 dark:text-gray-500;
+}
+
+.todo-item.hidden {
+  @apply hidden;
+}
+
+/* Recurring Badge */
+.recurring-badge {
+  @apply inline-block px-2 py-1 rounded text-xs font-semibold;
+}
+
+.recurring-badge.daily {
+  @apply bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300;
+}
+
+.recurring-badge.weekly {
+  @apply bg-purple-100 dark:bg-purple-900/30 text-purple-800 dark:text-purple-300;
+}
+
+.recurring-badge.monthly {
+  @apply bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300;
+}
+
+/* Checkbox Styling */
+input[type="checkbox"] {
+  @apply w-6 h-6 rounded cursor-pointer accent-blue-500;
+}
+
+/* Animation */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.todo-item {
+  animation: slideIn 0.3s ease-out;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-100 dark:bg-gray-800;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-300 dark:bg-gray-600 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-gray-400 dark:bg-gray-500;
+}
